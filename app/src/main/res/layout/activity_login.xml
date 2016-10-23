@@ -7,10 +7,67 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/layoutMainContainer"
     tools:context="course.com.androidchat.LoginActivity">
 
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wrapperPassword">
+
+        <EditText
+            android:id="@+id/editTxtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/login.message.email"
+            android:inputType="textPersonName"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wrapperPassword"
+        android:layout_above="@+id/layoutButtons">
+
+        <EditText
+            android:id="@+id/editTxtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTxtEmail"
+            android:hint="@string/login.message.password"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/layoutButtons"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login.button.signIn"
+            android:id="@+id/btnSignIn" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login.button.signUp"
+            android:id="@+id/btnSignUp" />
+    </LinearLayout>
+
+    <ProgressBar
+        style="?android:progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_below="@+id/layoutButtons"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
