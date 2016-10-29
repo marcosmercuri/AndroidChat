@@ -1,4 +1,4 @@
-package course.com.androidchat;
+package course.com.androidchat.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import course.com.androidchat.R;
 
 public class LoginActivity extends AppCompatActivity {
     @Bind(R.id.editTxtEmail)
