@@ -6,8 +6,8 @@ public interface LoginView {
     void showProgress();
     void hideProgress();
 
-    void handleSingIn();
-    void handleSingUp();
+    void handleSignIn();
+    void handleSignUp();
 
     void navigateToMainScreen();
     void showLoginError(String error);
