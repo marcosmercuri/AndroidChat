@@ -37,6 +37,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        loginPresenter = new LoginPresenterImpl(this);
+
     }
 
     @OnClick(R.id.btnSignIn)
