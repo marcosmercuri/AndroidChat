@@ -2,7 +2,7 @@ package course.com.androidchat;
 
 import android.app.Application;
 
-import com.firebase.client.Firebase;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AndroidChatApplication extends Application {
     @Override
@@ -12,7 +12,6 @@ public class AndroidChatApplication extends Application {
     }
 
     private void initFirebase() {
-        Firebase.setAndroidContext(this);
-        Firebase.getDefaultConfig().setPersistenceEnabled(true);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 }
