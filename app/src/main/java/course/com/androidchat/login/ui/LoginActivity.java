@@ -1,4 +1,4 @@
-package course.com.androidchat.login;
+package course.com.androidchat.login.ui;
 
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
@@ -15,6 +15,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import course.com.androidchat.R;
 import course.com.androidchat.contactlist.ContactListActivity;
+import course.com.androidchat.login.LoginPresenter;
+import course.com.androidchat.login.LoginPresenterImpl;
 
 public class LoginActivity extends AppCompatActivity implements LoginView {
     @Bind(R.id.editTxtEmail)

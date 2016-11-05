@@ -5,6 +5,7 @@ import android.util.Log;
 import course.com.androidchat.lib.EventBus;
 import course.com.androidchat.lib.GreenRobotEventBus;
 import course.com.androidchat.login.events.LoginEvent;
+import course.com.androidchat.login.ui.LoginView;
 
 public class LoginPresenterImpl implements LoginPresenter {
     private EventBus eventBus;

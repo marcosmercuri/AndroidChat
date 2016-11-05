@@ -1,4 +1,4 @@
-package course.com.androidchat.login;
+package course.com.androidchat.login.ui;
 
 public interface LoginView {
     void enableInputs();
