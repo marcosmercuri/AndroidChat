@@ -22,3 +22,18 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    compileSdkVersion =  23
+    buildToolsVersion  = '23.0.2'
+    minSdkVersion = 16
+    targetSdkVersion = 23
+
+    suppportLibraryVersion = '24.2.1'
+
+    circleImageViewVersion = '2.0.0'
+    firebaseVersion = '9.6.1'
+    butterknifeVersion = '7.0.1'
+    eventbusVersion = '3.0.0'
+    glideVersion = '3.6.1'
+}
