@@ -11,6 +11,10 @@ public class User {
     private Boolean online;
     private Map<String, Boolean> contactsStatus;
 
+    public User() {
+        this(null);
+    }
+
     public User(String email) {
         this.email = email;
         this.online = false;

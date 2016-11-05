@@ -1,16 +1,11 @@
 package course.com.androidchat.helper;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.*;
 import course.com.androidchat.entities.User;
 
 public class FirebaseHelper {
@@ -38,10 +33,11 @@ public class FirebaseHelper {
 
     public String getAuthUserEmail() {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        String email = null;
         if (firebaseUser!=null) {
-            return firebaseUser.getEmail();
+            email = firebaseUser.getEmail();
         }
-        return null;
+        return email;
     }
 
     public DatabaseReference getAuthUserReference() {
@@ -65,7 +61,7 @@ public class FirebaseHelper {
     }
 
     private boolean isNotBlank(String email) {
-        return "".equals(email);
+        return email!=null && !"".equals(email);
     }
 
     public DatabaseReference getContactsReference(String email) {
