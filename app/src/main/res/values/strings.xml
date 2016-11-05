@@ -4,7 +4,7 @@
     <string name="login.message.password">Password</string>
     <string name="login.button.signIn">Sign In</string>
     <string name="login.button.signUp">Sign Up</string>
-    <string name="login.login.error.message.signIn">Unable to start session %s</string>
-    <string name="login.login.error.message.signUp">Unable to register new user %s</string>
-    <string name="login.login.notice.message.signUp">User successfully registered</string>
+    <string name="login.error.message.signIn">Unable to start session %s</string>
+    <string name="login.error.message.signUp">Unable to register new user %s</string>
+    <string name="login.notice.message.signUp">User successfully registered</string>
 </resources>

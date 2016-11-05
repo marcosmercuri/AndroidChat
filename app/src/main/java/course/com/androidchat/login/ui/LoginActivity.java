@@ -91,20 +91,20 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     @Override
     public void showLoginError(String error) {
         inputPassword.setText("");
-        String msgError = String.format(getString(R.string.login_login_error_message_signIn), error);
+        String msgError = String.format(getString(R.string.login_error_message_signIn), error);
         inputPassword.setError(msgError);
     }
 
     @Override
     public void newUserError(String error) {
         inputPassword.setText("");
-        String msgError = String.format(getString(R.string.login_login_error_message_signUp), error);
+        String msgError = String.format(getString(R.string.login_error_message_signUp), error);
         inputPassword.setError(msgError);
     }
 
     @Override
     public void newUserSuccess() {
-        Snackbar.make(container, R.string.login_login_notice_message_signUp, Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(container, R.string.login_notice_message_signUp, Snackbar.LENGTH_SHORT).show();
     }
 
     private void setInputs(Boolean enabled) {
