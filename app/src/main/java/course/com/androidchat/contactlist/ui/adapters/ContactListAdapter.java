@@ -1,14 +1,13 @@
 package course.com.androidchat.contactlist.ui.adapters;
 
+import java.util.List;
+
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.util.List;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import course.com.androidchat.R;
@@ -92,6 +91,28 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
             txtStatus.setText(status);
             txtStatus.setTextColor(textColor);
             txtUser.setText(user.getEmail());
+        }
+    }
+
+    public void add(User user) {
+        if ( ! contactList.contains(user)) {
+            contactList.add(user);
+            notifyDataSetChanged();
+        }
+    }
+
+    public void update(User user) {
+        if (contactList.contains(user)) {
+            int index = contactList.indexOf(user);
+            contactList.set(index, user);
+            notifyDataSetChanged();
+        }
+    }
+
+    public void remove(User user) {
+        if (contactList.contains(user)) {
+            contactList.remove(user);
+            notifyDataSetChanged();
         }
     }
 }
