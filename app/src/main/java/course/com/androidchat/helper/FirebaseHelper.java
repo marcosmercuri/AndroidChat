@@ -47,7 +47,7 @@ public class FirebaseHelper {
     public DatabaseReference getUserReference(String email) {
         DatabaseReference userReference = null;
         if (isNotBlank(email)) {
-            String sanitizeEmail = sanitizeString(email);
+            String sanitizeEmail = convertEmailToFirebaseFormat(email);
             userReference = dataReference.getRoot().child(USERS_PATH).child(sanitizeEmail);
         }
         return userReference;
@@ -56,8 +56,12 @@ public class FirebaseHelper {
     /*
      * Firebase doesn't allow dots as path
      */
-    private String sanitizeString(String email) {
+    public String convertEmailToFirebaseFormat(String email) {
         return email.replace(".", "_");
+    }
+
+    public String convertEmailFromFirebaseFormat(String email) {
+        return email.replace("_", ".");
     }
 
     private boolean isNotBlank(String email) {
@@ -73,13 +77,13 @@ public class FirebaseHelper {
     }
 
     public DatabaseReference getOneContactReference(String mainEmail, String childEmail) {
-        String sanitizeChildEmail = sanitizeString(childEmail);
+        String sanitizeChildEmail = convertEmailToFirebaseFormat(childEmail);
         return getUserReference(mainEmail).child(CONTACTS_PATH).child(sanitizeChildEmail);
     }
 
     public DatabaseReference getAuthUserChatsReference(String receiver) {
-        String keySender = sanitizeString(getAuthUserEmail());
-        String keyReceiver = sanitizeString(receiver);
+        String keySender = convertEmailToFirebaseFormat(getAuthUserEmail());
+        String keyReceiver = convertEmailToFirebaseFormat(receiver);
         String keyChat = getKeyChat(keyReceiver, keySender);
 
         return dataReference.getRoot().child(CHATS_PATH).child(keyChat);
