@@ -8,7 +8,7 @@ public class User {
     public static final Boolean OFFLINE = false;
 
     private final String email;
-    private Boolean online;
+    private Boolean isOnline;
     private Map<String, Boolean> contactsStatus;
 
     public User() {
@@ -16,14 +16,12 @@ public class User {
     }
 
     public User(String email) {
-        this.email = email;
-        this.online = false;
-        this.contactsStatus = new HashMap<>();
+        this(email, false);
     }
 
-    public User(String email, Boolean online) {
+    public User(String email, Boolean isOnline) {
         this.email = email;
-        this.online = online;
+        this.isOnline = isOnline;
         this.contactsStatus = new HashMap<>();
     }
 
@@ -32,11 +30,11 @@ public class User {
     }
 
     public Boolean getOnline() {
-        return online;
+        return isOnline;
     }
 
     public void setOnline(Boolean online) {
-        this.online = online;
+        this.isOnline = online;
     }
 
     public Map<String, Boolean> getContactsStatus() {
@@ -45,5 +43,25 @@ public class User {
 
     public void setContactsStatus(Map<String, Boolean> contactsStatus) {
         this.contactsStatus = contactsStatus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+
+        User user = (User)o;
+
+        if(email != null? !email.equals(user.email) : user.email != null) return false;
+        if(isOnline != null? !isOnline.equals(user.isOnline) : user.isOnline != null) return false;
+        return contactsStatus != null? contactsStatus.equals(user.contactsStatus) : user.contactsStatus == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = email != null? email.hashCode() : 0;
+        result = 31 * result + (isOnline != null? isOnline.hashCode() : 0);
+        result = 31 * result + (contactsStatus != null? contactsStatus.hashCode() : 0);
+        return result;
     }
 }
