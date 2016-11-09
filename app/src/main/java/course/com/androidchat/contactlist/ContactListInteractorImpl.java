@@ -1,5 +1,8 @@
 package course.com.androidchat.contactlist;
 
+import course.com.androidchat.contactlist.repository.ContactListRepository;
+import course.com.androidchat.contactlist.repository.ContactListRepositoryImpl;
+
 public class ContactListInteractorImpl implements ContactListInteractor {
     private ContactListRepository repository;
 

@@ -1,4 +1,4 @@
-package course.com.androidchat.contactlist;
+package course.com.androidchat.contactlist.repository;
 
 public interface ContactListRepository {
     void signOff();
