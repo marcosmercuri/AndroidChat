@@ -9,4 +9,10 @@
     <string name="login.notice.message.signUp">User successfully registered</string>
     <string name="contactList.menu.action.signOff">Sign out</string>
     <string name="contactList.title">Contacts</string>
+
+    <string name="addcontact.message.title">Add Contact</string>
+    <string name="addcontact.message.add">Accept</string>
+    <string name="addcontact.message.cancel">Cancel</string>
+    <string name="addcontact.message.contactAdded">Contact successfully added</string>
+    <string name="addcontact.message.error">The Contact could not be added</string>
 </resources>
