@@ -1,5 +1,7 @@
 package course.com.androidchat.contactlist.ui.adapters;
 
+import static course.com.androidchat.entities.Constants.DEFAULT_AVATAR_URL;
+
 import java.util.List;
 
 import android.graphics.Color;
@@ -38,7 +40,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         User user = contactList.get(position);
         holder.setClickListener(user, onItemClickListener);
         holder.displayUserInfo(user);
-        imageLoader.load(holder.imgAvatar, "");
+        imageLoader.load(holder.imgAvatar, DEFAULT_AVATAR_URL);
     }
 
     @Override
