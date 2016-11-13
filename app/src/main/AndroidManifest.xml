@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="course.com.androidchat">
+      package="course.com.androidchat">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:name=".AndroidChatApplication"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".login.ui.LoginActivity" android:noHistory="true">
+          android:name=".AndroidChatApplication"
+          android:allowBackup="true"
+          android:icon="@mipmap/ic_launcher"
+          android:label="@string/app_name"
+          android:supportsRtl="true"
+          android:theme="@style/AppTheme">
+        <activity
+              android:name=".login.ui.LoginActivity"
+              android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".contactlist.ui.ContactListActivity"
+
+        <activity
+              android:name=".contactlist.ui.ContactListActivity"
               android:label="@string/contactList.title"
-              android:theme="@style/AppTheme.NoActionBar"></activity>
+              android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".chat.ChatActivity"
+              android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
