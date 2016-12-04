@@ -1,4 +1,4 @@
-package course.com.androidchat.chat;
+package course.com.androidchat.chat.ui;
 
 import course.com.androidchat.entities.ChatMessage;
 

@@ -1,5 +1,7 @@
 package course.com.androidchat.chat;
 
+import course.com.androidchat.chat.ui.ChatView;
+
 public class ChatPresenterImpl implements ChatPresenter {
     public ChatPresenterImpl(ChatView chatView) {
 

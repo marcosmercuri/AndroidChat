@@ -47,21 +47,16 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) return true;
-        if(o == null || getClass() != o.getClass()) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User)o;
+        User user = (User) o;
 
-        if(email != null? !email.equals(user.email) : user.email != null) return false;
-        if(isOnline != null? !isOnline.equals(user.isOnline) : user.isOnline != null) return false;
-        return contactsStatus != null? contactsStatus.equals(user.contactsStatus) : user.contactsStatus == null;
+        return email != null ? email.equals(user.email) : user.email == null;
     }
 
     @Override
     public int hashCode() {
-        int result = email != null? email.hashCode() : 0;
-        result = 31 * result + (isOnline != null? isOnline.hashCode() : 0);
-        result = 31 * result + (contactsStatus != null? contactsStatus.hashCode() : 0);
-        return result;
+        return email != null ? email.hashCode() : 0;
     }
 }

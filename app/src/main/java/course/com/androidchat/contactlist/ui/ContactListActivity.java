@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import course.com.androidchat.R;
 import course.com.androidchat.addcontact.ui.AddContactFragment;
-import course.com.androidchat.chat.ChatActivity;
+import course.com.androidchat.chat.ui.ChatActivity;
 import course.com.androidchat.contactlist.ContactListPresenter;
 import course.com.androidchat.contactlist.ContactListPresenterImpl;
 import course.com.androidchat.contactlist.ui.adapters.ContactListAdapter;

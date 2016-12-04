@@ -1,4 +1,4 @@
-package course.com.androidchat.chat;
+package course.com.androidchat.chat.ui;
 
 import static course.com.androidchat.entities.Constants.*;
 
@@ -12,9 +12,17 @@ import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import course.com.androidchat.R;
+import course.com.androidchat.chat.ui.adapters.ChatAdapter;
+import course.com.androidchat.chat.ChatPresenter;
+import course.com.androidchat.chat.ChatPresenterImpl;
 import course.com.androidchat.entities.ChatMessage;
 import course.com.androidchat.lib.GlideImageLoader;
 import course.com.androidchat.lib.ImageLoader;
@@ -56,11 +64,12 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     }
 
     private void setupAdapter() {
-
+        adapter = new ChatAdapter(this, new ArrayList<ChatMessage>());
     }
 
     private void setupRecyclerView() {
         messageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        messageRecyclerView.setAdapter(adapter);
     }
 
     private void setupToolbar(Intent intent) {
