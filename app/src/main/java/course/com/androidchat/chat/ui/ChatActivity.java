@@ -19,6 +19,7 @@ import java.util.Collections;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import course.com.androidchat.R;
 import course.com.androidchat.chat.ui.adapters.ChatAdapter;
 import course.com.androidchat.chat.ChatPresenter;
@@ -92,6 +93,8 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
 
         ImageLoader imageLoader = new GlideImageLoader(getApplicationContext());
         imageLoader.load(imgAvatar, DEFAULT_AVATAR_URL);
+
+        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -116,5 +119,11 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     public void onMessageReceived(ChatMessage message) {
         adapter.add(message);
         messageRecyclerView.scrollToPosition(adapter.getItemCount() - 1);
+    }
+
+    @OnClick(R.id.btnSendMessage)
+    public void sendMessage() {
+        presenter.sendMessage(editTxtMessage.getText().toString());
+        editTxtMessage.setText("");
     }
 }
